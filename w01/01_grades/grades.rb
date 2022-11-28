@@ -1,6 +1,16 @@
 def final_grade(array)
+  return 'I' if array.empty?
 
-  # This method currently has no code.
-  # Your job is to write the code to get the method to work!
-
+  average = (array.sum/array.length.to_f).round
+  if average >= 90
+    return 'A'
+  elsif average >= 80
+    return 'B'
+  elsif average >= 70
+    return 'C'
+  elsif average >= 60
+    return 'D'
+  else
+    return 'F'
+  end
 end
