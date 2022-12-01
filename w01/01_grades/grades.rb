@@ -9,7 +9,7 @@ def final_grade(array)
   if array.length == 0
     p "I"
   elsif mean.round >= 90.0 
-   p "A"
+    p "A"
   elsif mean.round > 80 && mean.round < 90
     p "B"
   elsif mean.round > 70 && mean.round < 80
@@ -20,4 +20,5 @@ def final_grade(array)
     p "F"
   end 
 end
+puts final_grade([95.0, 92.0, 99.0, 88.0, 96.0])
 
