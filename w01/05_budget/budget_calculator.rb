@@ -39,14 +39,25 @@ class Expense
 end
 
 class BudgetCalculator
-  attr_reader :incomes, :expenses
+  attr_accessor :incomes, :expenses
 
-  def initialize
-    # Your job is to fill this in!
+  def initialize()
+    # @incomes = incomes
+    # @expenses = expenses
   end
 
   def add_income(name, dollar_amount, annual_frequency)
-    # Your job is to fill this in!
+    income_storage = []
+    x = 0 
+    while x < 2
+      income_input = {
+        name: name,
+        dollar_amount: dollar_amount,
+        annual_frequency: annual_frequency
+      }
+      income_storage << income_input
+      x += 1 
+    end 
   end
 
   def add_expense(name, dollar_amount, annual_frequency)
