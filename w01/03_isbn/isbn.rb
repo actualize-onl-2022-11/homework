@@ -1,12 +1,28 @@
 def isbn_verify?(isbn_string)
-  # Your job is to write the code for this method!
   isbn_string = isbn_string.delete "-"
-
   if isbn_string.size <= 10
-
+    array = []
+    x = isbn_string.scan /\w/
+    array << x
+    collective = []
+    t = 0 
+    n = 10
+    while t < array[0].length
+      number = array[0][t].to_i * n 
+      t += 1 
+      n = n - 1 
+      collective << number
+    end 
+    sum = 0 
+    y = 0 
+    while y < collective.length
+      sum = sum + collective[y].to_i 
+      y += 1
+    end 
+    if sum  % 11 == 0 
+      p "This is a valid ISBN number"
+    end 
   end 
- 
-   
 end
 isbn_verify?("3-598-21508-8")
 
