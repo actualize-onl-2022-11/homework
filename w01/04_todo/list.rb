@@ -1,19 +1,30 @@
+require_relative 'task.rb'
+
 class List
   attr_reader :name, :tasks
 
   def initialize(name)
-    # Complete this method!
+    @name = name
+    @tasks = []
   end
 
   def add_task(name)
-    # Complete this method!
+    @tasks << Task.new(name)
   end
 
   def incomplete_tasks
-    # Complete this method!
+    return @tasks.select{ |task| task.completed == false }
+  end
+
+  def scheduled_tasks
+    return @tasks.select{ |task| task.due_date }
+  end
+
+  def unscheduled_tasks
+    return @tasks.select{ |task| task.due_date == nil }
   end
 
   def sorted_by_due_date
-    # Complete this method!
+    return scheduled_tasks.sort_by { |task| task.due_date } + unscheduled_tasks
   end
 end
