@@ -15,10 +15,27 @@ def intersection(array_1, array_2)
   p arr
 end
 
+def intersection(array_1, array_2)
+  array_1&array_2
+end 
 
 def find_first_duplicate(array)
   # Exercise 2: You need to complete this method!
+  index1 = 0
+  index2 = 1 
+  while index1 < array.length
+    if array[index1] == array[index2]
+      p array[index1]
+    end 
+    index1 += 1
+  end
 end
+p find_first_duplicate([4, 2, 6, 8, 0, 3, 5, 7, 2, 9])
+
+
+
+
+
 
 def subset(array_1, array_2)
   # Exercise 3: You need to complete this method!
